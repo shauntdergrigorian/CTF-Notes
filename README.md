@@ -433,6 +433,7 @@ Description | Command
 | If sudo -l reads (ALL, !root) /bin/bash, try this |  sudo -u#-1 /bin/bash |
 | Identify the distro and kernel |  uname -a; cat /etc/issue; cat /etc/os.release |
 | Locate executables that run with owner's permissions |  find / -perm -2000 -o -perm -4000; sudo -l |
+| Find custom applications |  find /usr/ -name custom_app; /usr/bin/custom_app -DOESNTEXIST |
 
 
 What's the OS? What version? What architecture?
