@@ -72,7 +72,7 @@ Description | Command
 | Mount SMB share | 						sudo mount //10.11.1.146/SusieShare ./mount/ -o username=" " |
 | Unmount | 								umount /mnt |
 | Switch to SMB1 | 							sudo nano /etc/samba/smb.conf and look for min protocol |
-| Generate md5 in Windows 10 | 				CertUtil -hashfile `<path to file>` MD5 |
+| Generate md5 in Windows 10 | 				`CertUtil -hashfile `<path to file> MD5` |
 | Escape lshell | 							echo os.system('/bin/bash') |
 | Show mysql version from client | 			SHOW VARIABLES LIKE "%version%"; |
 | Find what's using port 80 on windows | 	netstat -aon \| findstr :80 |
